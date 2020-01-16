@@ -1,9 +1,11 @@
 import React from 'react'
+import natalia from './img/nata.jpeg'
 
 export default function App() {
     return (
         <div>
-            START
+            Стартуем
+            <img src={natalia} alt=""/>
         </div>
     )
 }
