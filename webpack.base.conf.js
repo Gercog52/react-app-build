@@ -14,7 +14,10 @@ module.exports = {
         paths: PATH
     },
     entry: {
-        app: `${PATH.src}/index.js`
+        app: `${PATH.src}/index.tsx`
+    },
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js']
     },
     output: {
         filename: `${PATH.public}js/[name].js`,
@@ -22,7 +25,12 @@ module.exports = {
         publicPath: './',
     },
     module: {
-        rules: [{
+        rules: [
+            { 
+                test: /\.tsx?$/, 
+                loader: 'awesome-typescript-loader'
+              },
+        {
             test: /\.js(x)?$/,
             loader: 'babel-loader',
             exclude: '/node_modules/',
